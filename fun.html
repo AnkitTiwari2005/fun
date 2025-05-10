@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorry Aayush! ❤️</title>
+    <title>Sorry Aayush! 🥺</title>
     <style>
         /* Base Styles */
         * {
@@ -13,14 +13,15 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #ffcce6 0%, #ccf2ff 100%);
             overflow-x: hidden;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='%23ff6b6b' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>"), auto;
         }
 
         .container {
@@ -32,39 +33,58 @@
 
         /* Header Animation */
         h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             color: #ff6b6b;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            animation: heartbeat 1.5s infinite;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+            animation: heartbeat 1.5s infinite, rainbow 8s infinite linear;
+            background: white;
+            padding: 10px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: rotate(-3deg);
         }
 
         @keyframes heartbeat {
-            0% { transform: scale(1); }
-            25% { transform: scale(1.1); }
-            50% { transform: scale(1); }
-            75% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+            0% { transform: rotate(-3deg) scale(1); }
+            25% { transform: rotate(-3deg) scale(1.1); }
+            50% { transform: rotate(-3deg) scale(1); }
+            75% { transform: rotate(-3deg) scale(1.1); }
+            100% { transform: rotate(-3deg) scale(1); }
+        }
+
+        @keyframes rainbow {
+            0% { color: #ff6b6b; }
+            14% { color: #ffb86b; }
+            28% { color: #ffe66b; }
+            42% { color: #6bff6b; }
+            57% { color: #6bd4ff; }
+            71% { color: #a06bff; }
+            85% { color: #ff6bff; }
+            100% { color: #ff6b6b; }
         }
 
         /* Message Box */
         .message {
-            background: rgba(255, 255, 255, 0.9);
+            background: white;
             padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            margin: 30px 0;
             position: relative;
-            transform: rotate(-2deg);
+            transform: rotate(2deg);
             transition: all 0.3s ease;
+            border: 5px dashed #ffb3d9;
         }
 
         .message:hover {
-            transform: rotate(1deg) scale(1.02);
+            transform: rotate(-1deg) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         .message p {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             line-height: 1.6;
             color: #555;
             margin-bottom: 15px;
@@ -72,15 +92,31 @@
 
         /* Friend Icon */
         .friend-icon {
-            font-size: 4rem;
+            font-size: 5rem;
             margin: 20px 0;
             color: #4a90e2;
-            animation: bounce 2s infinite;
+            animation: bounce 2s infinite, spin 10s infinite linear;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+            display: inline-block;
         }
 
         @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Buttons Container */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
         }
 
         /* Forgive Button */
@@ -88,24 +124,30 @@
             background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
             color: white;
             border: none;
-            padding: 15px 30px;
-            font-size: 1.2rem;
+            padding: 15px 40px;
+            font-size: 1.5rem;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
             transition: all 0.3s ease;
-            margin-top: 20px;
             position: relative;
             overflow: hidden;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-weight: bold;
+            z-index: 1;
+            transform: rotate(-2deg);
         }
 
         .forgive-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.6);
+            transform: rotate(-2deg) scale(1.05);
+            box-shadow: 0 15px 30px rgba(255, 107, 107, 0.4);
+            animation: btnGlow 1.5s infinite;
         }
 
-        .forgive-btn:active {
-            transform: translateY(1px);
+        @keyframes btnGlow {
+            0% { box-shadow: 0 0 10px #ff6b6b; }
+            50% { box-shadow: 0 0 30px #ff6b6b; }
+            100% { box-shadow: 0 0 10px #ff6b6b; }
         }
 
         .forgive-btn:before {
@@ -115,12 +157,45 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
             transition: 0.5s;
+            z-index: -1;
         }
 
         .forgive-btn:hover:before {
             left: 100%;
+        }
+
+        /* No Forgive Button */
+        .no-forgive-btn {
+            background: linear-gradient(45deg, #4a90e2, #6bb9ff);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(74, 144, 226, 0.3);
+            transition: all 0.3s ease;
+            position: absolute;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-weight: bold;
+            transform: rotate(2deg);
+        }
+
+        /* Signature */
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #ff6b6b;
+            margin-top: 40px;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+            animation: floatUp 3s infinite ease-in-out;
+        }
+
+        @keyframes floatUp {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
         /* Floating Elements */
@@ -128,15 +203,18 @@
             position: fixed;
             pointer-events: none;
             animation: float linear infinite;
+            z-index: -1;
+            font-size: 2rem;
+            opacity: 0.8;
         }
 
         @keyframes float {
             0% {
-                transform: translateY(0) rotate(0deg);
+                transform: translateY(100vh) rotate(0deg);
                 opacity: 1;
             }
             100% {
-                transform: translateY(-100vh) rotate(360deg);
+                transform: translateY(-100px) rotate(360deg);
                 opacity: 0;
             }
         }
@@ -144,87 +222,159 @@
         /* Confetti */
         .confetti {
             position: fixed;
-            width: 10px;
-            height: 10px;
+            width: 15px;
+            height: 15px;
             background-color: #f00;
             opacity: 0;
+            z-index: 100;
+            border-radius: 50%;
         }
 
-        /* Signature */
-        .signature {
-            font-family: cursive;
+        /* Celebration Text */
+        .celebration {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            font-size: 5rem;
+            z-index: 1000;
+            opacity: 0;
+            text-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+        }
+
+        /* Cute Animals */
+        .animal {
+            position: fixed;
+            font-size: 3rem;
+            z-index: -1;
+            animation: animalMove linear infinite;
+        }
+
+        @keyframes animalMove {
+            0% {
+                transform: translateX(-100px) rotate(0deg);
+            }
+            100% {
+                transform: translateX(calc(100vw + 100px)) rotate(360deg);
+            }
+        }
+
+        /* Heart Trail */
+        .heart-trail {
+            position: absolute;
             font-size: 1.5rem;
-            color: #ff6b6b;
-            margin-top: 20px;
+            pointer-events: none;
+            opacity: 0;
+            animation: fadeOut 1s forwards;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: translate(var(--tx), var(--ty)) scale(0);
+            }
         }
 
         /* Responsive */
         @media (max-width: 600px) {
             h1 {
                 font-size: 2.5rem;
+                padding: 8px 20px;
             }
             .message {
                 padding: 20px;
             }
+            .message p {
+                font-size: 1.2rem;
+            }
             .friend-icon {
                 font-size: 3rem;
+            }
+            .forgive-btn, .no-forgive-btn {
+                padding: 12px 25px;
+                font-size: 1.2rem;
+            }
+            .signature {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Sorry Aayush!</h1>
+        <h1>Sorry Aayush! 🥺</h1>
         
         <div class="friend-icon">👬</div>
         
         <div class="message">
-            <p>Hey buddy, I messed up and I feel terrible about it.</p>
-            <p>You're an awesome friend, and I value our friendship a lot.</p>
-            <p>Can you find it in your heart to forgive me?</p>
-            <p>Next round of momos is on me! 🥟</p>
+            <p>Dear Aayush, my amazing friend,</p>
+            <p>I messed up and I feel terrible about it. 😔</p>
+            <p>You're the best friend anyone could ask for, and I value our friendship more than anything!</p>
+            <p>Please accept this virtual hug and my sincerest apology. 🤗</p>
+            <p>Next game night, snacks are on me! 🎮🍕</p>
         </div>
         
-        <button class="forgive-btn" id="forgiveBtn">Click if you forgive me</button>
+        <div class="buttons">
+            <button class="forgive-btn" id="forgiveBtn">I Forgive You! ❤️</button>
+            <button class="no-forgive-btn" id="noForgiveBtn">I Don't Forgive You 😠</button>
+        </div>
         
-        <div class="signature">Your friend</div>
+        <div class="signature">Your Best Friend</div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Create floating elements
             function createFloatingElements() {
-                const emojis = ['❤️', '👍', '😂', '😊', '👬', '🍕', '🎮'];
-                for (let i = 0; i < 15; i++) {
+                const emojis = ['❤️', '👍', '😂', '😊', '👬', '🍕', '🎮', '🐶', '🐱', '🦄', '🌈', '🌟', '🍩', '⚽'];
+                for (let i = 0; i < 20; i++) {
                     setTimeout(() => {
                         const element = document.createElement('div');
                         element.className = 'floating';
                         element.textContent = emojis[Math.floor(Math.random() * emojis.length)];
                         element.style.left = Math.random() * 100 + 'vw';
                         element.style.top = '100vh';
-                        element.style.fontSize = (Math.random() * 20 + 10) + 'px';
-                        element.style.animationDuration = (Math.random() * 5 + 5) + 's';
-                        element.style.animationDelay = (Math.random() * 3) + 's';
+                        element.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                        element.style.animationDuration = (Math.random() * 8 + 5) + 's';
+                        element.style.animationDelay = (Math.random() * 5) + 's';
                         document.body.appendChild(element);
                         
                         // Remove after animation
                         setTimeout(() => {
                             element.remove();
-                        }, 10000);
+                        }, 15000);
                     }, i * 300);
                 }
             }
 
-            // Initial floating elements
+            // Create cute animals
+            function createAnimals() {
+                const animals = ['🐶', '🐱', '🐰', '🦊', '🐻', '🐼', '🐨', '🐯', '🦁'];
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        const animal = document.createElement('div');
+                        animal.className = 'animal';
+                        animal.textContent = animals[Math.floor(Math.random() * animals.length)];
+                        animal.style.top = (Math.random() * 50 + 20) + 'vh';
+                        animal.style.animationDuration = (Math.random() * 30 + 20) + 's';
+                        animal.style.animationDelay = (Math.random() * 10) + 's';
+                        document.body.appendChild(animal);
+                    }, i * 2000);
+                }
+            }
+
+            // Initial elements
             createFloatingElements();
+            createAnimals();
             setInterval(createFloatingElements, 5000);
 
             // Forgive button with confetti
             const forgiveBtn = document.getElementById('forgiveBtn');
+            const noForgiveBtn = document.getElementById('noForgiveBtn');
             
             forgiveBtn.addEventListener('click', function() {
-                // Create confetti
-                for (let i = 0; i < 100; i++) {
+                // Create massive confetti
+                for (let i = 0; i < 150; i++) {
                     setTimeout(() => {
                         const confetti = document.createElement('div');
                         confetti.className = 'confetti';
@@ -232,6 +382,9 @@
                         confetti.style.top = '-10px';
                         confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
                         confetti.style.opacity = '1';
+                        confetti.style.width = (Math.random() * 20 + 10) + 'px';
+                        confetti.style.height = (Math.random() * 20 + 10) + 'px';
+                        confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
                         confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear forwards`;
                         document.body.appendChild(confetti);
                         
@@ -252,50 +405,162 @@
                             confetti.remove();
                             style.remove();
                         }, 3000);
-                    }, i * 30);
+                    }, i * 20);
                 }
                 
-                // Change button text
-                forgiveBtn.textContent = 'Thanks bro! You\'re the best! 👊';
+                // Change button text and style
+                forgiveBtn.textContent = 'Yay! You\'re the best! 👊❤️';
                 forgiveBtn.style.background = 'linear-gradient(45deg, #4a90e2, #6bb9ff)';
+                forgiveBtn.style.animation = 'none';
                 
-                // Play sound (using browser's built-in speech synthesis)
-                if ('speechSynthesis' in window) {
-                    const utterance = new SpeechSynthesisUtterance("Thank you Aayush! You're the best friend ever!");
-                    window.speechSynthesis.speak(utterance);
-                }
+                // Hide the no button
+                noForgiveBtn.style.display = 'none';
                 
                 // Create celebration emoji
-                const celebration = document.createElement('div');
-                celebration.textContent = '🎉';
-                celebration.style.position = 'fixed';
-                celebration.style.fontSize = '5rem';
-                celebration.style.left = '50%';
-                celebration.style.top = '50%';
-                celebration.style.transform = 'translate(-50%, -50%)';
-                celebration.style.zIndex = '100';
-                celebration.style.animation = 'zoom 2s forwards';
-                document.body.appendChild(celebration);
+                const celebrations = ['🎉', '🎊', '✨', '🥳', '👏', '🏆'];
+                for (let i = 0; i < 10; i++) {
+                    setTimeout(() => {
+                        const celebration = document.createElement('div');
+                        celebration.className = 'celebration';
+                        celebration.textContent = celebrations[Math.floor(Math.random() * celebrations.length)];
+                        celebration.style.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                        document.body.appendChild(celebration);
+                        
+                        // Animation
+                        setTimeout(() => {
+                            celebration.style.opacity = '1';
+                            celebration.style.transform = 'translate(-50%, -50%) scale(1)';
+                            
+                            setTimeout(() => {
+                                celebration.style.opacity = '0';
+                                celebration.style.transform = 'translate(-50%, -50%) scale(2)';
+                                
+                                setTimeout(() => {
+                                    celebration.remove();
+                                }, 500);
+                            }, 1000);
+                        }, 10);
+                    }, i * 200);
+                }
                 
-                // Keyframes for zoom
-                const zoomStyle = document.createElement('style');
-                zoomStyle.textContent = `
-                    @keyframes zoom {
-                        0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
-                        50% { transform: translate(-50%, -50%) scale(1.5); opacity: 1; }
-                        100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
-                    }
-                `;
-                document.head.appendChild(zoomStyle);
-                
-                // Remove after animation
-                setTimeout(() => {
-                    celebration.remove();
-                    zoomStyle.remove();
-                }, 2000);
+                // Create floating hearts from button
+                for (let i = 0; i < 30; i++) {
+                    setTimeout(() => {
+                        const heart = document.createElement('div');
+                        heart.innerHTML = '❤️';
+                        heart.style.position = 'fixed';
+                        heart.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                        heart.style.left = (forgiveBtn.offsetLeft + forgiveBtn.offsetWidth/2) + 'px';
+                        heart.style.top = (forgiveBtn.offsetTop + forgiveBtn.offsetHeight/2) + 'px';
+                        heart.style.opacity = '1';
+                        heart.style.transform = 'translate(-50%, -50%) scale(1)';
+                        heart.style.zIndex = '100';
+                        heart.style.animation = `heartFloat${i} ${Math.random() * 2 + 1}s forwards`;
+                        document.body.appendChild(heart);
+                        
+                        // Keyframes
+                        const style = document.createElement('style');
+                        style.textContent = `
+                            @keyframes heartFloat${i} {
+                                to {
+                                    transform: translate(${Math.random() * 200 - 100}px, ${-Math.random() * 100 - 50}px) scale(0);
+                                    opacity: 0;
+                                }
+                            }
+                        `;
+                        document.head.appendChild(style);
+                        
+                        // Remove
+                        setTimeout(() => {
+                            heart.remove();
+                            style.remove();
+                        }, 2000);
+                    }, i * 50);
+                }
             });
 
-            // Add animation to message box on hover
+            // No Forgive Button - runs away
+            noForgiveBtn.addEventListener('mouseover', function() {
+                // Calculate new random position that's on screen
+                const btnRect = noForgiveBtn.getBoundingClientRect();
+                const maxX = window.innerWidth - btnRect.width;
+                const maxY = window.innerHeight - btnRect.height;
+                
+                const newX = Math.random() * maxX;
+                const newY = Math.random() * maxY;
+                
+                // Apply new position with smooth transition
+                noForgiveBtn.style.transition = 'all 0.5s ease-out';
+                noForgiveBtn.style.position = 'fixed';
+                noForgiveBtn.style.left = newX + 'px';
+                noForgiveBtn.style.top = newY + 'px';
+                
+                // Change text briefly
+                const originalText = noForgiveBtn.textContent;
+                noForgiveBtn.textContent = 'Catch me if you can! 😜';
+                
+                setTimeout(() => {
+                    noForgiveBtn.textContent = originalText;
+                }, 1000);
+                
+                // Create a "miss" effect
+                const miss = document.createElement('div');
+                miss.textContent = 'Missed me! 😝';
+                miss.style.position = 'fixed';
+                miss.style.left = (btnRect.left + btnRect.width/2) + 'px';
+                miss.style.top = (btnRect.top - 30) + 'px';
+                miss.style.color = '#ff6b6b';
+                miss.style.fontWeight = 'bold';
+                miss.style.fontSize = '1.2rem';
+                miss.style.transform = 'translateX(-50%)';
+                miss.style.animation = 'fadeUp 1s forwards';
+                document.body.appendChild(miss);
+                
+                // Keyframes
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes fadeUp {
+                        to {
+                            transform: translateX(-50%) translateY(-50px);
+                            opacity: 0;
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                // Remove
+                setTimeout(() => {
+                    miss.remove();
+                    style.remove();
+                }, 1000);
+            });
+
+            // Heart trail effect
+            document.addEventListener('mousemove', function(e) {
+                if (Math.random() > 0.7) {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart-trail';
+                    heart.innerHTML = '❤️';
+                    heart.style.left = e.clientX + 'px';
+                    heart.style.top = e.clientY + 'px';
+                    heart.style.color = `hsl(${Math.random() * 360}, 100%, 70%)`;
+                    
+                    // Random movement
+                    const tx = (Math.random() * 40 - 20) + 'px';
+                    const ty = (Math.random() * 40 - 20) + 'px';
+                    heart.style.setProperty('--tx', tx);
+                    heart.style.setProperty('--ty', ty);
+                    
+                    document.body.appendChild(heart);
+                    
+                    // Remove after animation
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 1000);
+                }
+            });
+
+            // Make message box shake on hover
             const message = document.querySelector('.message');
             message.addEventListener('mouseenter', function() {
                 this.style.animation = 'shake 0.5s';
@@ -303,11 +568,11 @@
                 const shakeStyle = document.createElement('style');
                 shakeStyle.textContent = `
                     @keyframes shake {
-                        0%, 100% { transform: translateX(0) rotate(-2deg); }
-                        20% { transform: translateX(-5px) rotate(-5deg); }
-                        40% { transform: translateX(5px) rotate(1deg); }
-                        60% { transform: translateX(-5px) rotate(-3deg); }
-                        80% { transform: translateX(5px) rotate(2deg); }
+                        0%, 100% { transform: rotate(2deg) translateX(0); }
+                        20% { transform: rotate(5deg) translateX(-5px); }
+                        40% { transform: rotate(-1deg) translateX(5px); }
+                        60% { transform: rotate(4deg) translateX(-5px); }
+                        80% { transform: rotate(-2deg) translateX(5px); }
                     }
                 `;
                 document.head.appendChild(shakeStyle);
@@ -316,6 +581,46 @@
                     this.style.animation = '';
                     shakeStyle.remove();
                 }, 500);
+            });
+
+            // Make friend icon jump when clicked
+            const friendIcon = document.querySelector('.friend-icon');
+            friendIcon.addEventListener('click', function() {
+                this.style.animation = 'none';
+                void this.offsetWidth; // Trigger reflow
+                this.style.animation = 'bounce 2s infinite, spin 10s infinite linear';
+                
+                // Create little hearts
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        const heart = document.createElement('div');
+                        heart.innerHTML = '❤️';
+                        heart.style.position = 'absolute';
+                        heart.style.left = friendIcon.offsetLeft + friendIcon.offsetWidth/2 + 'px';
+                        heart.style.top = friendIcon.offsetTop + 'px';
+                        heart.style.fontSize = '1.5rem';
+                        heart.style.animation = `heartFloat${i} ${Math.random() * 1 + 0.5}s forwards`;
+                        document.body.appendChild(heart);
+                        
+                        // Keyframes
+                        const style = document.createElement('style');
+                        style.textContent = `
+                            @keyframes heartFloat${i} {
+                                to {
+                                    transform: translate(${Math.random() * 100 - 50}px, ${-Math.random() * 50 - 30}px) scale(0);
+                                    opacity: 0;
+                                }
+                            }
+                        `;
+                        document.head.appendChild(style);
+                        
+                        // Remove
+                        setTimeout(() => {
+                            heart.remove();
+                            style.remove();
+                        }, 1000);
+                    }, i * 100);
+                }
             });
         });
     </script>
